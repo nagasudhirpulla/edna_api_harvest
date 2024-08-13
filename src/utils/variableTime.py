@@ -6,12 +6,12 @@ import calendar
 @dataclass
 class VariableTime:
     absoluteTime: str = field(default="2024-08-07 00:00:00")
-    varYears: int | None = field(default=0)
-    varMonths: int | None = field(default=0)
-    varDays: int | None = field(default=0)
-    varHours: int | None = field(default=0)
-    varMinutes: int | None = field(default=-2)
-    varSeconds: int | None = field(default=None)
+    varYears: int = field(default=0)
+    varMonths: int = field(default=0)
+    varDays: int = field(default=0)
+    varHours: int = field(default=0)
+    varMinutes: int = field(default=-2)
+    varSeconds: int = field(default=None)
 
     def getDt(self):
         absDt = dt.datetime.strptime(
@@ -52,6 +52,7 @@ class VariableTime:
         if self.varSeconds is None:
             reqDt += dt.timedelta(seconds=(absDt.second-reqDt.second))
         return reqDt
+
 
 def addMonths(inpDt, mnths):
     tmpMnth = inpDt.month - 1 + mnths
