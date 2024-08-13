@@ -5,7 +5,7 @@ from src.config.dbConfig import DbConfig
 
 # initialize the app config global variable
 fetchConf = None
-ednaPnts: list[tuple[str]] = []
+ednaPnts: 'list[tuple[str]]' = []
 dbConf = None
 
 

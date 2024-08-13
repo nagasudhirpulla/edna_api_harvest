@@ -27,7 +27,7 @@ print(f"{startDt} to {endDt}")
 pnts = loadEdnaPnts(pntsPath)
 
 fetcher = EdnaFetcher(fetchConf.apiBaseUrl)
-dataRows: list[EdnaSample] = []
+dataRows: 'list[EdnaSample]' = []
 for pnt in pnts:
     dataRows += fetcher.fetchEdnaData(pntId=pnt[0], startTime=startDt, endTime=endDt,
                                       periodicitySecs=fetchConf.fetchPeriodicitySecs, samplingType=fetchConf.fetchStrategy)

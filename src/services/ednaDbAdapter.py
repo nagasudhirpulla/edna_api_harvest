@@ -9,7 +9,7 @@ class EdnaDbAdapter:
         self.conn = None
         self.dbConf = dbConf
 
-    def pushRows(self, dataRows: list[EdnaSample]) -> bool:
+    def pushRows(self, dataRows: 'list[EdnaSample]') -> bool:
         cur = self.conn.cursor()
         # commit in multiples of 500 rows
         rowIter = 0

@@ -16,7 +16,7 @@ class EdnaFetcher():
     def __init__(self, host: str):
         self.host = host
 
-    def fetchEdnaData(self, pntId: str, startTime: dt.datetime, endTime: dt.datetime, periodicitySecs: float, samplingType: str) -> list[EdnaSample]:
+    def fetchEdnaData(self, pntId: str, startTime: dt.datetime, endTime: dt.datetime, periodicitySecs: float, samplingType: str) -> 'list[EdnaSample]':
         startTimeStr = convertTimeToReqStr(startTime)
         endTimeStr = convertTimeToReqStr(endTime)
 
